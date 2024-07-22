@@ -35,9 +35,12 @@ def manual_tester(news):
 news = st.text_area(label = '', placeholder= "Enter the news")
 
 if st.button('Check'):
-    result = manual_tester(news)
-
-    if result == 1:
-        st.success("Real News")
+    if news == '':
+        st.warning("Please enter the news")
     else:
-        st.warning('Fake News')
+        result = manual_tester(news)
+
+        if result == 1:
+            st.success("Real News")
+        else:
+            st.warning('Fake News')
